@@ -5,17 +5,13 @@ import Footer from "./Footer";
 import notes from "../notes";
 import "../styles.css";
 
-function CreatNote(note) {
-  return (
-    <Note key={note.id} title={note.title} description={note.description} />
-  );
-}
-
 function App() {
   return (
     <div className="App">
       <Header />
-      {notes.map(CreatNote)}
+      {notes.map((note) => (
+        <Note key={note.id} title={note.title} description={note.description} />
+      ))}
       <Footer />
     </div>
   );
